@@ -1,0 +1,35 @@
+echo "# First-test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/HailTeX22/First-test.git
+git push -u origin main
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define parameters
+total_time = 5  # Total simulation time (seconds)
+fps = 30  # Frames per second
+dt = 1/fps  # Time step
+
+# Generate time array
+t = np.linspace(0, total_time, int(total_time*fps))
+
+# Define motion equation (simple harmonic motion)
+amplitude = 1.0  # Amplitude of the motion
+frequency = 1.0  # Frequency of the motion (in Hz)
+omega = 2 * np.pi * frequency  # Angular frequency
+
+# Calculate position at each time step
+y = amplitude * np.sin(omega * t)
+
+# Plot motion
+plt.figure(figsize=(8, 4))
+plt.plot(t, y)
+plt.title("Ball Motion Up and Down")
+plt.xlabel("Time (s)")
+plt.ylabel("Position (m)")
+plt.grid(True)
+plt.show()
